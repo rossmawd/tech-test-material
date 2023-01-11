@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TowerService } from './simulation/tower.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tech-test-material';
+
+  constructor(public towerService: TowerService) {
+
+  }
 }

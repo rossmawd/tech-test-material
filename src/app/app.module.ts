@@ -21,6 +21,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatListModule } from '@angular/material/list';
 import { TowerComponent } from './components/tower/tower.component';
 import { FarmVisualiserComponent } from './components/farm-visualiser/farm-visualiser.component';
+import { TowerNavigationComponent } from './components/tower-navigation/tower-navigation.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FarmVisualiserComponent } from './components/farm-visualiser/farm-visua
     AppComponent,
     HeaderComponent,
     TowerComponent,
-    FarmVisualiserComponent
+    FarmVisualiserComponent,
+    TowerNavigationComponent
   ],
   imports: [
     BrowserModule,

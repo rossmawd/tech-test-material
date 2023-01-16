@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tower',
@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class TowerComponent implements OnInit {
 
   constructor() { }
+
+  @Input() selectedTower: number = 0;
+  @Input() selectedTowerData: string = '';
 
   ngOnInit(): void {
   }

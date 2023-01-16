@@ -22,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
 import { TowerComponent } from './components/tower/tower.component';
 import { FarmVisualiserComponent } from './components/farm-visualiser/farm-visualiser.component';
 import { TowerNavigationComponent } from './components/tower-navigation/tower-navigation.component';
+import { SlotComponent } from './components/slot/slot.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { TowerNavigationComponent } from './components/tower-navigation/tower-na
     HeaderComponent,
     TowerComponent,
     FarmVisualiserComponent,
-    TowerNavigationComponent
+    TowerNavigationComponent,
+    SlotComponent
   ],
   imports: [
     BrowserModule,

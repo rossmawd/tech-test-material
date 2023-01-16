@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { TowerService } from './simulation/tower.service';
 import { Tower } from './simulation/tower';
-import { Observer } from 'rxjs';
 import { Observable } from 'rxjs';
 
 @Component({

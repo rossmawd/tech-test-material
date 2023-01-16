@@ -19,12 +19,16 @@ import { MatTableModule } from '@angular/material/table'
 import { MatBadgeModule } from '@angular/material/badge'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatListModule } from '@angular/material/list';
+import { TowerComponent } from './components/tower/tower.component';
+import { FarmVisualiserComponent } from './components/farm-visualiser/farm-visualiser.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    TowerComponent,
+    FarmVisualiserComponent
   ],
   imports: [
     BrowserModule,

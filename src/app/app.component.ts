@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TowerService } from './simulation/tower.service';
 import { Tower } from './simulation/tower';
+import { Observer } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +11,11 @@ import { Tower } from './simulation/tower';
 })
 export class AppComponent {
   title = 'tech-test-material';
-  towerData: Tower[] = [];
+  $towerData: Observable<any> | undefined
 
   constructor(public towerService: TowerService) { }
 
   ngOnInit() {
-    this.towerService.towerData$.subscribe((val: Tower[]) => {
-      console.log(val);
-      this.towerData = val;
-    });
+    this.$towerData = this.towerService.towerData$
   }
 }

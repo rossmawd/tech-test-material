@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Tower } from 'src/app/simulation/tower';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-farm-visualiser',
@@ -9,7 +10,8 @@ import { Tower } from 'src/app/simulation/tower';
 export class FarmVisualiserComponent implements OnInit {
   constructor() { }
 
-  @Input() towerData: Tower[] = [];
+  @Input() $towerData: Observable<any> | undefined;
+  towerData: Tower[] = [];
   selectedTower: number = 0;
   selectedTowerData: Tower | null = null;
 
@@ -27,17 +29,15 @@ export class FarmVisualiserComponent implements OnInit {
     console.log('new tower selected', this.selectedTower);
   }
 
-  ngOnInit(): void { }
-
-  // setting selectedTowerData when the subscription has returned its first value
-  ngOnChanges(changes: any): void {
-    if (
-      !this.selectedTowerData &&
-      changes['towerData'].currentValue.length > 0
-    ) {
-      this.selectedTowerData =
-        changes['towerData'].currentValue[this.selectedTower];
-      console.log('changes have happened');
+  ngOnInit(): void {
+    if (this.$towerData) {
+      this.$towerData.subscribe((val) => {
+        this.towerData = val
+        // setting the initial tower to be displayed
+        this.selectedTowerData = this.towerData[this.selectedTower]
+      })
     }
+
   }
+
 }

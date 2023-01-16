@@ -1,18 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChange } from '@angular/core';
+import { Tower } from 'src/app/simulation/tower';
 
 @Component({
   selector: 'app-tower',
   templateUrl: './tower.component.html',
-  styleUrls: ['./tower.component.css']
+  styleUrls: ['./tower.component.css'],
 })
 export class TowerComponent implements OnInit {
-
   constructor() { }
 
   @Input() selectedTower: number = 0;
-  @Input() selectedTowerData: string = '';
+  @Input() selectedTowerData: Tower | null = null;
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }

@@ -1,8 +1,12 @@
 <div class="flex justify-around">
-  <button class="pt-3 flex justify-between"><mat-icon class="bg-green-600 text-white rounded-full w-9 h-9">
+  <button (click)="changeTower('back')" class="pt-3 flex justify-between">
+    <mat-icon class="bg-green-600 text-white rounded-full w-9 h-9">
       arrow_back
-    </mat-icon></button>
-  <button class="pt-3 flex justify-between"><mat-icon class="bg-green-600 text-white rounded-full w-9 h-9">
+    </mat-icon>
+  </button>
+  <button (click)="changeTower('next')" class="pt-3 flex justify-between">
+    <mat-icon class="bg-green-600 text-white rounded-full w-9 h-9">
       arrow_forward
-    </mat-icon></button>
+    </mat-icon>
+  </button>
 </div>

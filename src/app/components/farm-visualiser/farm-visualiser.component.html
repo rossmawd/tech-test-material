@@ -1,5 +1,4 @@
 <pre>
-  <app-tower [selectedTower]="4" [selectedTowerData]="'hello'"></app-tower>
-  <app-tower-navigation></app-tower-navigation>
-  {{ towerData }}
+  <app-tower-navigation (changeTowerEvent)="changeTower($event)"></app-tower-navigation>
+  <app-tower *ngIf="selectedTowerData" [selectedTower]="selectedTower" [selectedTowerData]="selectedTowerData"></app-tower>
 </pre>

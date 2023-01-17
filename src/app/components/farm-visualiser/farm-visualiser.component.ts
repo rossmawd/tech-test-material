@@ -29,6 +29,7 @@ export class FarmVisualiserComponent implements OnInit {
     console.log('new tower selected', this.selectedTower);
   }
 
+
   ngOnInit(): void {
     if (this.$towerData) {
       this.$towerData.subscribe((val) => {

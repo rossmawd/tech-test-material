@@ -1,4 +1,9 @@
-<pre>
-  <app-tower-navigation (changeTowerEvent)="changeTower($event)"></app-tower-navigation>
-  <app-tower *ngIf="selectedTowerData" [selectedTower]="selectedTower" [selectedTowerData]="selectedTowerData"></app-tower>
-</pre>
+<app-tower-navigation
+  (changeTowerEvent)="changeTower($event)"
+></app-tower-navigation>
+<app-tower
+  *ngIf="selectedTowerData"
+  [selectedTower]="selectedTower"
+  [selectedTowerData]="selectedTowerData"
+></app-tower>
+<div class="bg-green-100" *ngIf="!selectedTowerData">Please wait</div>

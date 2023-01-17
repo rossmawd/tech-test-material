@@ -1,23 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render, screen } from '@testing-library/angular'
 import { TowerNavigationComponent } from './tower-navigation.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
 
 describe('TowerNavigationComponent', () => {
-  let component: TowerNavigationComponent;
-  let fixture: ComponentFixture<TowerNavigationComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ TowerNavigationComponent ]
+  it('should render buttons with appropriate aria labels"', async () => {
+    await render(TowerNavigationComponent, {
+      // the import and provider below suppress errors thrown as the MaterialUI dependencies are not available.
+      imports: [MatIconModule], providers: [
+        { provide: MATERIAL_SANITY_CHECKS, useValue: false }
+      ]
     })
-    .compileComponents();
 
-    fixture = TestBed.createComponent(TowerNavigationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    const buttons = screen.getAllByRole('button')
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(buttons[0]).toHaveAccessibleName('previous tower')
+    expect(buttons[1]).toHaveAccessibleName('next tower')
   });
 });

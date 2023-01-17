@@ -6,5 +6,5 @@
     "module": "CommonJs",
     "types": ["jest", "@testing-library/jest-dom"]
   },
-  "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
+  "include": [ "**/*.spec.ts"]
 }

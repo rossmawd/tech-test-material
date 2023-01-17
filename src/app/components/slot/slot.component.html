@@ -2,16 +2,19 @@
   <h3 class="font-bold">Slot {{ slotData?.number }}:</h3>
   <p>
     Tray Identifier:
-    {{ slotData?.growthTray?.identifier }}
+    {{ slotData?.growthTray?.identifier ?? "No Tray in this Slot." }}
   </p>
   <mat-divider></mat-divider>
   <p>
     Job Name:
-    {{ slotData?.growthTray?.growthJob?.name }}
+    {{ slotData?.growthTray?.growthJob?.name ?? "No job currently assigned." }}
   </p>
   <mat-divider></mat-divider>
   <p>
     Percentage complete:
-    {{ slotData?.growthTray?.growthJob?.progressPercentage }}
+    {{
+      slotData?.growthTray?.growthJob?.progressPercentage ??
+        "No job in progress."
+    }}
   </p>
 </div>

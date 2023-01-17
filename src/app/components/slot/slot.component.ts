@@ -4,7 +4,6 @@ import { Slot } from 'src/app/simulation/slot';
 @Component({
   selector: 'app-slot',
   templateUrl: './slot.component.html',
-  styleUrls: ['./slot.component.css']
 })
 export class SlotComponent implements OnInit {
   constructor() { }

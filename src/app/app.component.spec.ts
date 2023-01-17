@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { TowerService } from './simulation/tower.service';
 import { TowerNavigationComponent } from './components/tower-navigation/tower-navigation.component';
 import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
+import { TowerComponent } from './components/tower/tower.component';
 
 
 describe('AppComponent', () => {
@@ -22,7 +23,8 @@ describe('AppComponent', () => {
         AppComponent,
         HeaderComponent,
         FarmVisualiserComponent,
-        TowerNavigationComponent
+        TowerNavigationComponent,
+        TowerComponent
       ],
       providers: [
         TowerService,

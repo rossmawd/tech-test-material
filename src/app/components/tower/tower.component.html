@@ -1,5 +1,8 @@
 <div class="bg-blue-100 p-5 mt-14 m-5 rounded">
-  <div *ngFor="let slot of selectedTowerData?.slots; index as i">
-    <app-slot [slotData]="slot"></app-slot>
+  <div *ngIf="selectedTowerData">
+    <div *ngFor="let slot of selectedTowerData?.slots; index as i">
+      <app-slot [slotData]="slot"></app-slot>
+    </div>
   </div>
+  <div *ngIf="!selectedTowerData">Please Wait</div>
 </div>

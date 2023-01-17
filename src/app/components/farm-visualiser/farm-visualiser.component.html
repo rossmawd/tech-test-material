@@ -3,8 +3,4 @@
   [selectedTower]="selectedTower"
 ></app-tower-navigation>
 
-<app-tower
-  *ngIf="selectedTowerData"
-  [selectedTowerData]="selectedTowerData"
-></app-tower>
-<div class="bg-green-100" *ngIf="!selectedTowerData">Please wait</div>
+<app-tower [selectedTowerData]="selectedTowerData"></app-tower>

@@ -4,17 +4,18 @@
     <button
       aria-label="previous tower"
       (click)="changeTower('back')"
-      class="pt-3 flex justify-between w-15 h-15"
+      class="pt-3 flex justify-between items-center"
     >
       <mat-icon class="bg-green-600 text-white rounded-full w-15 h-15">
         arrow_back
       </mat-icon>
       &nbsp; Previous
     </button>
+    <h2 class="pt-6 pb-0">Tower {{ selectedTower + 1 }}:</h2>
     <button
       aria-label="next tower"
       (click)="changeTower('next')"
-      class="pt-3 flex justify-between"
+      class="pt-3 flex justify-between items-center"
     >
       Next &nbsp;
       <mat-icon class="bg-green-600 text-white rounded-full w-9 h-9">

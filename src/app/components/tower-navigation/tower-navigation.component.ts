@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tower-navigation',
@@ -9,6 +9,7 @@ export class TowerNavigationComponent implements OnInit {
   constructor() { }
 
   @Output() changeTowerEvent = new EventEmitter<string>();
+  @Input() selectedTower: number = 0
 
   changeTower(value: 'next' | 'back') {
     this.changeTowerEvent.emit(value);

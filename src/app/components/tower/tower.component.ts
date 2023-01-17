@@ -9,7 +9,6 @@ import { Tower } from 'src/app/simulation/tower';
 export class TowerComponent implements OnInit {
   constructor() { }
 
-  @Input() selectedTower: number = 0;
   @Input() selectedTowerData: Tower | null = null;
 
   ngOnInit(): void { }

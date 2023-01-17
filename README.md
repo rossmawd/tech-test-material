@@ -1,6 +1,6 @@
 ## How to Run
 
-...
+Please type `npm start` into your console to start up the development server
 
 ## Thought Process
 
@@ -11,6 +11,7 @@
 ### Testing
 
 - I've chosen to remove the Karma test runner as I have more experience with Jest, and I believe it is faster to work with
+- run the unit tests with `npm run test`
 
 ---
 
@@ -32,5 +33,5 @@
 
 ## Things needed to make Production ready
 
-- setting up pre-commit and pre-push hooks to enforce linting and code standards
+- setting up pre-commit and pre-push hooks to enforce linting, code standards and automated running of tests
 - re-evaluate combination of TailwindCSS and MaterialUI, as I've experienced some potential typography conflicts

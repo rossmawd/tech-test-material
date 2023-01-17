@@ -1,21 +1,32 @@
 import { TestBed } from '@angular/core/testing';
-import { screen, render } from '@testing-library/angular'
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FarmVisualiserComponent } from './components/farm-visualiser/farm-visualiser.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { TowerService } from './simulation/tower.service';
+import { TowerNavigationComponent } from './components/tower-navigation/tower-navigation.component';
+import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
 
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        MatIconModule,
+        MatToolbarModule,
+        RouterTestingModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        FarmVisualiserComponent,
+        TowerNavigationComponent
       ],
       providers: [
-        TowerService
+        TowerService,
+        { provide: MATERIAL_SANITY_CHECKS, useValue: false }
       ]
     }).compileComponents();
   });
@@ -30,12 +41,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('tech-test-material');
-  });
-
-  it('should should display the text "Make me nice"', async () => {
-    const text =
-      await render(AppComponent)
-    expect(screen.getByText('Make me nice'))
   });
 
 });

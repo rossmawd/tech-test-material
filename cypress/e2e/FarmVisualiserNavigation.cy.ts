@@ -4,10 +4,10 @@ describe('template spec', () => {
 
     cy.get('h2').should('contain.text', 'Tower 1:')
 
-    cy.get('button').last().click()
+    cy.get('[data-cy="next"]').click()
     cy.get('h2').should('contain.text', 'Tower 2:')
 
-    cy.get('button').first().click()
+    cy.get('[data-cy="previous"]').click()
     cy.get('h2').should('contain.text', 'Tower 1:')
   })
 })

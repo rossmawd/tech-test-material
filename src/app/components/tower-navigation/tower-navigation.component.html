@@ -2,6 +2,7 @@
 <div>
   <div class="flex justify-around fixed top-14 left-0 right-0 bg-white pb-2">
     <button
+      data-cy="previous"
       aria-label="previous tower"
       (click)="changeTower('back')"
       class="pt-3 flex justify-between items-center"
@@ -13,6 +14,7 @@
     </button>
     <h2 class="pt-6 pb-0">Tower {{ selectedTower + 1 }}:</h2>
     <button
+      data-cy="next"
       aria-label="next tower"
       (click)="changeTower('next')"
       class="pt-3 flex justify-between items-center"

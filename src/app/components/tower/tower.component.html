@@ -1,6 +1,6 @@
-<pre>
-<div class="bg-blue-100 p-5 m-5">
-  <p>Tower: {{ selectedTower + 1 }}</p>
-  <p>Tower Data: {{ selectedTowerData | json }}</p>
+<div class="bg-blue-100 p-5 m-5 rounded">
+  <h2 class="text-lg">Tower {{ selectedTower + 1 }}:</h2>
+  <div *ngFor="let slot of selectedTowerData?.slots; index as i">
+    <app-slot [slotData]="slot"></app-slot>
+  </div>
 </div>
-</pre>

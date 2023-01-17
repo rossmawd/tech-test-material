@@ -16,6 +16,7 @@ export class FarmVisualiserComponent implements OnInit {
   selectedTowerData: Tower | null = null;
 
   changeTower(value: string) {
+    window.scrollTo(0, 0)
     if (value == 'back' && this.selectedTower > 0) {
       this.selectedTower--;
       this.selectedTowerData = this.towerData[this.selectedTower];

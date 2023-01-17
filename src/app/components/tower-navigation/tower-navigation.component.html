@@ -1,20 +1,25 @@
-<div class="flex justify-around">
-  <button
-    aria-label="previous tower"
-    (click)="changeTower('back')"
-    class="pt-3 flex justify-between"
-  >
-    <mat-icon class="bg-green-600 text-white rounded-full w-9 h-9">
-      arrow_back
-    </mat-icon>
-  </button>
-  <button
-    aria-label="next tower"
-    (click)="changeTower('next')"
-    class="pt-3 flex justify-between"
-  >
-    <mat-icon class="bg-green-600 text-white rounded-full w-9 h-9">
-      arrow_forward
-    </mat-icon>
-  </button>
+<div class="h-20"></div>
+<div>
+  <div class="flex justify-around fixed top-14 left-0 right-0 bg-white pb-2">
+    <button
+      aria-label="previous tower"
+      (click)="changeTower('back')"
+      class="pt-3 flex justify-between w-15 h-15"
+    >
+      <mat-icon class="bg-green-600 text-white rounded-full w-15 h-15">
+        arrow_back
+      </mat-icon>
+      &nbsp; Previous
+    </button>
+    <button
+      aria-label="next tower"
+      (click)="changeTower('next')"
+      class="pt-3 flex justify-between"
+    >
+      Next &nbsp;
+      <mat-icon class="bg-green-600 text-white rounded-full w-9 h-9">
+        arrow_forward
+      </mat-icon>
+    </button>
+  </div>
 </div>

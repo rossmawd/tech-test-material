@@ -1,1 +1,17 @@
-<p>slot works!</p>
+<div class="border-black border-2 my-3 rounded p-4 mx-10">
+  <h3 class="font-bold">Slot {{ slotData?.number }}:</h3>
+  <p>
+    Tray Identifier:
+    {{ slotData?.growthTray?.identifier }}
+  </p>
+  <mat-divider></mat-divider>
+  <p>
+    Job Name:
+    {{ slotData?.growthTray?.growthJob?.name }}
+  </p>
+  <mat-divider></mat-divider>
+  <p>
+    Percentage complete:
+    {{ slotData?.growthTray?.growthJob?.progressPercentage }}
+  </p>
+</div>

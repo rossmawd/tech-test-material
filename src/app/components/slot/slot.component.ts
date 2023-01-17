@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Slot } from 'src/app/simulation/slot';
 
 @Component({
   selector: 'app-slot',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slot.component.css']
 })
 export class SlotComponent implements OnInit {
-
   constructor() { }
 
+  @Input() slotData: Slot | null = null
   ngOnInit(): void {
   }
 

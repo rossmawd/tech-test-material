@@ -29,3 +29,8 @@
 - I've opted to use the Tailwind CSS framework and the Material component library to speed up development
 
 - I used the AngularCLI to generate components (`ng g c <name>`) to prevent silly mistakes and save time
+
+## Things needed to make Production ready
+
+- setting up pre-commit and pre-push hooks to enforce linting and code standards
+- re-evaluate combination of TailwindCSS and MaterialUI, as I've experienced some potential typography conflicts

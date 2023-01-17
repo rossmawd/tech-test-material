@@ -1,4 +1,4 @@
-<div class="border-black border-2 my-3 rounded p-4 mx-10">
+<div class="border-black border-2 my-3 rounded p-4 mx-10 flex-wrap space-y-1">
   <h3 class="font-bold">Slot {{ slotData?.number }}:</h3>
   <p>
     Tray Identifier:
@@ -13,8 +13,9 @@
   <p>
     Percentage complete:
     {{
-      slotData?.growthTray?.growthJob?.progressPercentage ??
-        "No job in progress."
+      slotData?.growthTray?.growthJob?.progressPercentage
+        ? slotData?.growthTray?.growthJob?.progressPercentage + "%"
+        : "No job in progress."
     }}
   </p>
 </div>

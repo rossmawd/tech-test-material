@@ -4,6 +4,9 @@ describe('template spec', () => {
 
     cy.get('h2').should('contain.text', 'Tower 1:')
 
+    // waiting for the tower data to load
+    cy.get('h3', { timeout: 10000 }).should('be.visible');
+
     cy.get('[data-cy="next"]').click()
     cy.get('h2').should('contain.text', 'Tower 2:')
 

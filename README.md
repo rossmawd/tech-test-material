@@ -37,6 +37,12 @@ Please type `npm start` into your console to start up the development server
 
 - I used the AngularCLI to generate components (`ng g c <name>`) to prevent silly mistakes and save time
 
+## Docker
+
+Docker Pull Command
+
+`docker pull rossmawd/tech-test-material`
+
 ## Assumptions
 
 - I assumed this application would be part of a suite of functionality, and so provider a separate header so that a menu could be easily added to it to switch between different applications.

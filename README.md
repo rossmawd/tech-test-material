@@ -10,6 +10,10 @@ Please type `npm start` into your console to start up the development server
 
 ### Component Tree
 
+![component tree](./component-tree.jpg)
+
+- please see ./component-tree.jpg
+
 ### Testing
 
 - I've chosen to remove the default Karma test runner as I have more experience with Jest, and I believe it is faster to work with
@@ -42,3 +46,5 @@ Please type `npm start` into your console to start up the development server
 
 - setting up pre-commit and pre-push hooks to enforce linting, code standards and automated running of tests
 - re-evaluate combination of TailwindCSS and MaterialUI, as I've experienced some potential typography conflicts
+- perhaps create a utility function to get rid the repetitive boilerplate that has cropped up in the unit tests ( i.e. the `provide: MATERIAL_SANITY_CHECKS` required to suppress errors)
+- Mobile first, accessible design

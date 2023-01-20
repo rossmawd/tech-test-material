@@ -1,5 +1,4 @@
 import { isDevMode, NgModule } from '@angular/core';
-import { environment } from '../environments/environment';
 
 import { BrowserModule } from '@angular/platform-browser';
 

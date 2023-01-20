@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { TowerService } from './simulation/tower.service';
-import { Tower } from './simulation/tower';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'tech-test-material';
-  $towerData: Observable<any> | undefined
 
-  constructor(public towerService: TowerService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.$towerData = this.towerService.towerData$
   }
 }

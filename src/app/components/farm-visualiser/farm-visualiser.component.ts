@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Tower } from 'src/app/simulation/tower';
+import { TowerService } from 'src/app/simulation/tower.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -7,9 +8,9 @@ import { Observable } from 'rxjs';
   templateUrl: './farm-visualiser.component.html',
 })
 export class FarmVisualiserComponent implements OnInit {
-  constructor() { }
+  constructor(public towerService: TowerService) { }
 
-  @Input() $towerData: Observable<any> | undefined;
+  $towerData: Observable<any> = this.towerService.towerData$
   towerData: Tower[] = [];
   selectedTower: number = 0;
   selectedTowerData: Tower | null = null;

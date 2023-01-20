@@ -17,6 +17,7 @@ import { TowerComponent } from './components/tower/tower.component';
 import { FarmVisualiserComponent } from './components/farm-visualiser/farm-visualiser.component';
 import { TowerNavigationComponent } from './components/tower-navigation/tower-navigation.component';
 import { SlotComponent } from './components/slot/slot.component';
+import { FaultsModule } from './faults/faults.module';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SlotComponent } from './components/slot/slot.component';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    FaultsModule
   ],
   providers: [
     TowerService

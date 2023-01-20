@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { isDevMode, NgModule } from '@angular/core';
+import { environment } from '../environments/environment';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +20,8 @@ import { FarmVisualiserComponent } from './components/farm-visualiser/farm-visua
 import { TowerNavigationComponent } from './components/tower-navigation/tower-navigation.component';
 import { SlotComponent } from './components/slot/slot.component';
 import { FaultsModule } from './faults/faults.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 @NgModule({
@@ -37,7 +41,16 @@ import { FaultsModule } from './faults/faults.module';
     MatIconModule,
     MatToolbarModule,
     MatDividerModule,
-    FaultsModule
+    FaultsModule,
+    StoreModule.forRoot({}),
+    //https://ngrx.io/guide/store-devtools
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      //environment.production
+      logOnly: !isDevMode(),
+      autoPause: true,
+    })
+
   ],
   providers: [
     TowerService

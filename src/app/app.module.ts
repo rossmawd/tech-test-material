@@ -21,6 +21,7 @@ import { SlotComponent } from './components/slot/slot.component';
 import { FaultsModule } from './faults/faults.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects'
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     MatToolbarModule,
     MatDividerModule,
     FaultsModule,
+    EffectsModule.forRoot(),
     StoreModule.forRoot({}),
     //https://ngrx.io/guide/store-devtools
     StoreDevtoolsModule.instrument({

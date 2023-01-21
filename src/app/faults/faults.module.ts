@@ -4,6 +4,8 @@ import { StoreModule } from '@ngrx/store';
 import { FaultPageComponent } from './components/fault-page/fault-page.component';
 import { FaultsService } from './faults.service';
 import { reducers } from './store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { FaultsEffects } from './store/effects';
 
 
 
@@ -13,7 +15,8 @@ import { reducers } from './store/reducers';
   ],
   imports: [
     CommonModule,
-    StoreModule.forFeature('faults', reducers)
+    StoreModule.forFeature('faults', reducers),
+    EffectsModule.forFeature([FaultsEffects])
   ],
   providers: [FaultsService],
   exports: [FaultPageComponent]

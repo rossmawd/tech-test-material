@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, delay } from 'rxjs';
-import { FaultInterface } from './types/fault-interface';
+import { FaultInterface } from './types/fault.interface';
 
 
 @Injectable({

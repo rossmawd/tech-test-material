@@ -1,4 +1,4 @@
-import { FaultInterface } from "./fault-interface";
+import { FaultInterface } from "./fault.interface";
 
 export interface FaultsStateInterface {
   isLoading: boolean;

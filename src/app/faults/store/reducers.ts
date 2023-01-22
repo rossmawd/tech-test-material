@@ -19,15 +19,3 @@ export const reducers = createReducer(
   on(FaultActions.getFaultsFailure, (state, action) => ({ ...state, isLoading: false, error: action.error })
   ),
 )
-
-// export const reducers = createReducer(
-//   initialState,
-//   on(FaultActions.getFaults, (state) => ({ ...state, isLoading: true }),
-
-//   ))
-
-
-  //on(PostActions.stopLoading, (state) => ({...state, isLoading: false}))
-
-  // on(FaultActions.getFaultsSuccess, (state, action) => ({ ...state, isLoading: false, faults: action.faults }),
-  // on(FaultActions.getFaultsFailure, (state) => ({ ...state, isLoading: true }),

@@ -1,5 +1,16 @@
 <div class="fixed top-0 left-0 right-0">
   <mat-toolbar class="mx-auto border-x-2 justify-between">
     <h1>Farm Visualiser</h1>
+    <div>
+      <a
+        [routerLink]="['home']"
+        style="margin-right: 10px"
+        mat-raised-button
+        color="accent"
+      >
+        Visualiser
+      </a>
+      <a [routerLink]="['faults']" mat-raised-button color="accent">Faults</a>
+    </div>
   </mat-toolbar>
 </div>

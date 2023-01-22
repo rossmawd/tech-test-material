@@ -1,1 +1,13 @@
-<p>the page is Loading: {{ isLoading$ | async }}</p>
+<h3 style="padding-left: 10px">Faults</h3>
+
+<mat-card *ngIf="error$ | async as error">
+  <mat-card-content>{{ error }}</mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="isLoading$ | async">
+  <mat-card-content>...Loading Faults...</mat-card-content>
+</mat-card>
+
+<mat-card *ngFor="let fault of faults$ | async">
+  <mat-card-content>{{ fault.title }}</mat-card-content>
+</mat-card>

@@ -6,6 +6,8 @@ import { FaultsService } from './faults.service';
 import { reducers } from './store/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { FaultsEffects } from './store/effects';
+import { MatCardModule } from '@angular/material/card'
+
 
 
 
@@ -16,7 +18,9 @@ import { FaultsEffects } from './store/effects';
   imports: [
     CommonModule,
     StoreModule.forFeature('faults', reducers),
-    EffectsModule.forFeature([FaultsEffects])
+    EffectsModule.forFeature([FaultsEffects]),
+    MatCardModule,
+
   ],
   providers: [FaultsService],
   exports: [FaultPageComponent]

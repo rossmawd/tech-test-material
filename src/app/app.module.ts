@@ -14,7 +14,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatDividerModule } from '@angular/material/divider';
-
+import { MatCardModule } from '@angular/material/card'
 
 import { TowerComponent } from './components/tower/tower.component';
 import { FarmVisualiserComponent } from './components/farm-visualiser/farm-visualiser.component';
@@ -44,6 +44,7 @@ import { environment } from '../environments/environment';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+    MatCardModule,
     MatDividerModule,
     FaultsModule,
     EffectsModule.forRoot(),

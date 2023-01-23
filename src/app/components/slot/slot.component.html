@@ -19,10 +19,19 @@
     }}
   </p>
   <mat-divider></mat-divider>
-  <button
-    (click)="postNewFault(slotData?.growthTray?.identifier)"
-    mat-raised-button
-  >
-    Log new fault
-  </button>
+  <div class="slot-button">
+    <button
+      (click)="postNewFault(slotData?.growthTray?.identifier)"
+      mat-raised-button
+      disabled="{{
+        traysWithErrors.includes(slotData?.growthTray?.identifier ?? '')
+      }}"
+    >
+      {{
+        traysWithErrors.includes(slotData?.growthTray?.identifier ?? "")
+          ? "Fault logged"
+          : "Log Tray Fault"
+      }}
+    </button>
+  </div>
 </div>

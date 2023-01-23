@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Tower } from 'src/app/simulation/tower';
 import { TowerService } from 'src/app/simulation/tower.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-farm-visualiser',
   templateUrl: './farm-visualiser.component.html',
 })
-export class FarmVisualiserComponent implements OnInit {
+export class FarmVisualiserComponent implements OnInit, OnDestroy {
   constructor(public towerService: TowerService) { }
 
   $towerData: Observable<any> = this.towerService.towerData$
+  private sub: Subscription | undefined;
   towerData: Tower[] = [];
   selectedTower: number = 0;
   selectedTowerData: Tower | null = null;
@@ -31,11 +32,16 @@ export class FarmVisualiserComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.$towerData) {
-      this.$towerData.subscribe((val) => {
+      this.sub = this.$towerData.subscribe((val) => {
         this.towerData = val;
         // setting the initial tower to be displayed
         this.selectedTowerData = this.towerData[this.selectedTower];
       });
     }
+  }
+
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe()
   }
 }

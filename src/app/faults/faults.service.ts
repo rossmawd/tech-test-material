@@ -1,21 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, delay } from 'rxjs';
 import { FaultInterface } from './types/fault.interface';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError } from 'rxjs';
 
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    Authorization: 'my-auth-token'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class FaultsService {
-  getFaults(): Observable<FaultInterface[]> {
-    const faults = [
-      { id: '1', title: 'First Fault' },
-      { id: '2', title: 'Second Fault' },
-      { id: '3', title: 'Third Fault' },
-    ]
 
-    return of(faults).pipe(delay(2000))
+  constructor(private http: HttpClient) { }
+
+  getFaults(): Observable<FaultInterface[]> {
+
+    const faults: Observable<any> = this.http.get('http://localhost:3000/faults')
+
+    console.log(faults)
+    return faults.pipe(delay(2000))
 
   }
-  // constructor() { }
+
+
+  postFault(fault: FaultInterface) {
+
+    return this.http.post<FaultInterface>('http://localhost:3000/faults', fault, httpOptions).pipe(catchError(() => 'error'))
+
+  }
+
 }

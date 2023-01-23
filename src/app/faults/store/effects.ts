@@ -21,6 +21,16 @@ export class FaultsEffects {
     )
   );
 
+  postFault$ = createEffect(() => this.actions$.pipe(
+    ofType(FaultsActions.postFault),
+    mergeMap(action => {
+      console.log(action)
+      return this.faultsService.postFault({ trayId: action.trayId, title: action.title }).pipe(map(data => {
+        console.log(data)
+      }))
+    })
+  ), { dispatch: false })
+
   constructor(private actions$: Actions, private faultsService: FaultsService) {
   }
 

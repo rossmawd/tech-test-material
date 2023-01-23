@@ -18,4 +18,11 @@
         : "No job in progress."
     }}
   </p>
+  <mat-divider></mat-divider>
+  <button
+    (click)="postNewFault(slotData?.growthTray?.identifier)"
+    mat-raised-button
+  >
+    Log new fault
+  </button>
 </div>

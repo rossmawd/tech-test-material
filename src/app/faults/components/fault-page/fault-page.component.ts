@@ -5,6 +5,7 @@ import * as FaultsActions from '../../store/actions'
 import { Observable } from 'rxjs';
 import { errorSelector, faultsSelector, isLoadingSelector } from '../../store/selectors';
 import { FaultInterface } from '../../types/fault.interface';
+import { FaultsService } from '../../faults.service';
 
 @Component({
   selector: 'app-fault-page',
@@ -16,8 +17,12 @@ export class FaultPageComponent implements OnInit {
   isLoading$: Observable<boolean>;
   error$: Observable<string | null>;
   faults$: Observable<FaultInterface[]>;
+  postFault$: Observable<any> | undefined;
 
-  constructor(private store: Store<AppStateInterface>) {
+
+
+
+  constructor(private store: Store<AppStateInterface>, private faultService: FaultsService) {
     this.isLoading$ = this.store.pipe(select(isLoadingSelector))
     this.error$ = this.store.pipe(select(errorSelector))
     this.faults$ = this.store.pipe(select(faultsSelector))
@@ -25,5 +30,6 @@ export class FaultPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(FaultsActions.getFaults())
+
   }
 }

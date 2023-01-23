@@ -6,4 +6,5 @@ export const getFaultsSuccess = createAction('[Faults] Get Faults success', prop
 export const getFaultsFailure = createAction('[Faults] Get Faults failure', props<{ error: string }>());
 
 
-// export const stopLoading = createAction('[Faults] Stop Loading')
+export const postFault = createAction('[Faults] Post Fault', props<FaultInterface>())
+

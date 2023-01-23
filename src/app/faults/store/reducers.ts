@@ -16,6 +16,7 @@ export const reducers = createReducer(
     isLoading: false,
     faults: action.faults,
   })),
-  on(FaultActions.getFaultsFailure, (state, action) => ({ ...state, isLoading: false, error: action.error })
+  on(FaultActions.getFaultsFailure, (state, action) => ({ ...state, isLoading: false, error: action.error }),
   ),
+  on(FaultActions.postFault, (state, action) => ({ ...state, faults: [...state.faults, { title: action.title, trayId: action.trayId }] }))
 )

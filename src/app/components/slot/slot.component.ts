@@ -15,6 +15,7 @@ import { faultsSelector } from 'src/app/faults/store/selectors';
 export class SlotComponent implements OnInit, OnDestroy {
   faults$: Observable<FaultInterface[]>;
   sub: Subscription | undefined;
+  trayHasFault: boolean = false;
   constructor(private store: Store<AppStateInterface>) {
     this.faults$ = this.store.pipe(select(faultsSelector))
   }
@@ -26,7 +27,11 @@ export class SlotComponent implements OnInit, OnDestroy {
     this.store.dispatch(FaultsActions.getFaults())
 
     this.sub = this.faults$.subscribe((val) => {
-      val.forEach((val) => this.traysWithErrors.push(val.trayId))
+      val.forEach((val) => { this.traysWithErrors = [...this.traysWithErrors, val.trayId] })
+
+      this.trayHasFault = this.traysWithErrors.includes(this.slotData?.growthTray?.identifier ?? '')
+
+      console.log('New fault', this.traysWithErrors)
     });
   }
 

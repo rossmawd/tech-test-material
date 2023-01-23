@@ -23,12 +23,12 @@
     <button
       (click)="postNewFault(slotData?.growthTray?.identifier)"
       mat-raised-button
-      disabled="{{
-        traysWithErrors.includes(slotData?.growthTray?.identifier ?? '')
-      }}"
+      disabled="{{ trayHasFault || !slotData?.growthTray?.identifier }}"
     >
       {{
-        traysWithErrors.includes(slotData?.growthTray?.identifier ?? "")
+        !slotData?.growthTray?.identifier
+          ? "No Tray in slot"
+          : trayHasFault
           ? "Fault logged"
           : "Log Tray Fault"
       }}

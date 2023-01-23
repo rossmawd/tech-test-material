@@ -1,39 +1,9 @@
 {
   "faults": [
     {
-      "trayId": "GT B1",
+      "trayId": "GT B5",
       "title": "Generic Fault",
       "id": 1
-    },
-    {
-      "trayId": "GT B4",
-      "title": "Generic Fault",
-      "id": 2
-    },
-    {
-      "trayId": "NO tray id",
-      "title": "Generic Fault",
-      "id": 3
-    },
-    {
-      "trayId": "GT A5",
-      "title": "Generic Fault",
-      "id": 4
-    },
-    {
-      "trayId": "GT A2",
-      "title": "Generic Fault",
-      "id": 5
-    },
-    {
-      "trayId": "GT A1",
-      "title": "Generic Fault",
-      "id": 6
-    },
-    {
-      "trayId": "GT A3",
-      "title": "Generic Fault",
-      "id": 7
     }
   ]
 }

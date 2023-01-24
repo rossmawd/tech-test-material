@@ -27,7 +27,6 @@ export class FarmVisualiserComponent implements OnInit, OnDestroy {
       this.selectedTower++;
       this.selectedTowerData = this.towerData[this.selectedTower];
     }
-    console.log('new tower selected', this.selectedTower);
   }
 
   ngOnInit(): void {

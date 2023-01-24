@@ -24,9 +24,8 @@ export class FaultsEffects {
   postFault$ = createEffect(() => this.actions$.pipe(
     ofType(FaultsActions.postFault),
     mergeMap(action => {
-      console.log(action)
       return this.faultsService.postFault({ trayId: action.trayId, title: action.title }).pipe(map(data => {
-        console.log(data)
+        console.log('data posted to database', data)
       }))
     })
   ), { dispatch: false })

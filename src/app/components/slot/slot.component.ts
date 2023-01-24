@@ -27,11 +27,17 @@ export class SlotComponent implements OnInit, OnDestroy {
     this.store.dispatch(FaultsActions.getFaults())
 
     this.sub = this.faults$.subscribe((val) => {
-      val.forEach((val) => { this.traysWithErrors = [...this.traysWithErrors, val.trayId] })
+      val.forEach((val) => {
+
+        if (!this.traysWithErrors.includes(val.trayId)) {
+          this.traysWithErrors = [...this.traysWithErrors, val.trayId]
+
+
+        }
+      })
 
       this.trayHasFault = this.traysWithErrors.includes(this.slotData?.growthTray?.identifier ?? '')
 
-      console.log('New fault', this.traysWithErrors)
     });
   }
 

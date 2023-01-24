@@ -4,35 +4,30 @@ import { FaultInterface } from './types/fault.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs';
 
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    Authorization: 'my-auth-token'
-  })
+    Authorization: 'my-auth-token',
+  }),
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FaultsService {
-
   constructor(private http: HttpClient) { }
 
   getFaults(): Observable<FaultInterface[]> {
+    const faults: Observable<any> = this.http.get(
+      'http://localhost:3000/faults'
+    );
 
-    const faults: Observable<any> = this.http.get('http://localhost:3000/faults')
-
-    console.log(faults)
-    return faults.pipe(delay(2000))
-
+    return faults.pipe(delay(2000));
   }
-
 
   postFault(fault: FaultInterface) {
-
-    return this.http.post<FaultInterface>('http://localhost:3000/faults', fault, httpOptions).pipe(catchError(() => 'error'))
-
+    return this.http
+      .post<FaultInterface>('http://localhost:3000/faults', fault, httpOptions)
+      .pipe(catchError(() => 'error'));
   }
-
 }
